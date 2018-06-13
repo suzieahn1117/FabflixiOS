@@ -1,24 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nlA-8F-q36">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Vhe-0H-X3C">
+            <objects>
+                <navigationController id="nlA-8F-q36" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j39-NI-aQB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Mz7-NG-ocQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="urX-CK-mDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1758" y="129"/>
+        </scene>
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Fabflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywk-ER-uxT">
+                                <rect key="frame" x="16" y="107" width="343" height="23"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD0-Av-t9x">
+                                <rect key="frame" x="16" y="183" width="343" height="23"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="05Q-ey-bsA">
+                                <rect key="frame" x="16" y="221" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7B-RV-ojw">
+                                <rect key="frame" x="16" y="272" width="343" height="32"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <state key="normal" title="LET'S GO!">
+                                    <color key="titleColor" red="1" green="0.18895850776932277" blue="0.10822906081016015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="LetsGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eyR-zq-LMV"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNc-z6-uyz">
+                                <rect key="frame" x="16" y="138" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SD0-Av-t9x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ary-Df-hVS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ywk-ER-uxT" secondAttribute="trailing" constant="16" id="B6g-MH-DHC"/>
+                            <constraint firstItem="05Q-ey-bsA" firstAttribute="top" secondItem="SD0-Av-t9x" secondAttribute="bottom" constant="15" id="BVk-ab-hiP"/>
+                            <constraint firstItem="SD0-Av-t9x" firstAttribute="top" secondItem="DNc-z6-uyz" secondAttribute="bottom" constant="15" id="CKc-bA-1gS"/>
+                            <constraint firstItem="DNc-z6-uyz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="E31-SV-B6Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DNc-z6-uyz" secondAttribute="trailing" constant="16" id="OB7-VK-Whf"/>
+                            <constraint firstItem="V7B-RV-ojw" firstAttribute="top" secondItem="05Q-ey-bsA" secondAttribute="bottom" constant="21" id="Oqf-WK-0zM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SD0-Av-t9x" secondAttribute="trailing" constant="16" id="Owq-96-Wdd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V7B-RV-ojw" secondAttribute="trailing" constant="16" id="PVh-E1-YDm"/>
+                            <constraint firstItem="Ywk-ER-uxT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Xks-8U-1VQ"/>
+                            <constraint firstItem="V7B-RV-ojw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gtj-ql-ca7"/>
+                            <constraint firstItem="DNc-z6-uyz" firstAttribute="top" secondItem="Ywk-ER-uxT" secondAttribute="bottom" constant="8" id="mUo-HG-BuG"/>
+                            <constraint firstItem="05Q-ey-bsA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rzg-hO-SEa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="05Q-ey-bsA" secondAttribute="trailing" constant="16" id="sIj-mH-urt"/>
+                            <constraint firstItem="Ywk-ER-uxT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="tD9-As-5b4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nOF-ow-3lo"/>
+                    <connections>
+                        <outlet property="Password" destination="05Q-ey-bsA" id="62Q-TW-iiB"/>
+                        <outlet property="Username" destination="DNc-z6-uyz" id="enZ-2B-rTb"/>
+                        <segue destination="cAo-pO-kVL" kind="presentation" identifier="HomePage" id="UDh-Eh-yg3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-897" y="128"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="lJr-Cx-U0H">
+            <objects>
+                <viewController storyboardIdentifier="HomePage" id="cAo-pO-kVL" customClass="HomeViewController" customModule="Fabflix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i4C-cm-HQ9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pi-KA-9C7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="FABFLIX" id="WKb-Yd-vKa"/>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-VZ-83f">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cAo-pO-kVL" id="u8u-XM-1Cz"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Pi-KA-9C7" firstAttribute="top" secondItem="fSW-iL-vaT" secondAttribute="top" id="REX-54-91h"/>
+                            <constraint firstItem="aGk-VZ-83f" firstAttribute="leading" secondItem="fSW-iL-vaT" secondAttribute="leading" id="SKr-66-sDB"/>
+                            <constraint firstItem="aGk-VZ-83f" firstAttribute="top" secondItem="fSW-iL-vaT" secondAttribute="top" constant="44" id="d5i-Ji-BOi"/>
+                            <constraint firstItem="4Pi-KA-9C7" firstAttribute="leading" secondItem="fSW-iL-vaT" secondAttribute="leading" id="gfJ-n7-dh2"/>
+                            <constraint firstItem="fSW-iL-vaT" firstAttribute="trailing" secondItem="aGk-VZ-83f" secondAttribute="trailing" id="mEW-rZ-Jz3"/>
+                            <constraint firstItem="fSW-iL-vaT" firstAttribute="trailing" secondItem="4Pi-KA-9C7" secondAttribute="trailing" id="nxf-qL-D2K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fSW-iL-vaT"/>
+                    </view>
+                    <connections>
+                        <outlet property="SearchBar" destination="aGk-VZ-83f" id="c4f-JH-CFX"/>
+                        <outlet property="searchDisplayController" destination="One-c1-NJ7" id="LpG-qU-cSQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJP-aC-1hv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="One-c1-NJ7">
+                    <connections>
+                        <outlet property="delegate" destination="cAo-pO-kVL" id="CkM-fy-j9r"/>
+                        <outlet property="searchContentsController" destination="cAo-pO-kVL" id="mTM-ah-Vgp"/>
+                        <outlet property="searchResultsDataSource" destination="cAo-pO-kVL" id="J6g-e9-YHg"/>
+                        <outlet property="searchResultsDelegate" destination="cAo-pO-kVL" id="WFB-l2-rIN"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2" y="128"/>
         </scene>
     </scenes>
 </document>

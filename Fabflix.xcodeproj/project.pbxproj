@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D46A8AA520D0B54900827359 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46A8AA420D0B54900827359 /* HomeRepository.swift */; };
 		D4B3D35420CCB1EE00393068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D35320CCB1EE00393068 /* AppDelegate.swift */; };
-		D4B3D35620CCB1EE00393068 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D35520CCB1EE00393068 /* ViewController.swift */; };
+		D4B3D35620CCB1EE00393068 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D35520CCB1EE00393068 /* LoginViewController.swift */; };
 		D4B3D35920CCB1EE00393068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B3D35720CCB1EE00393068 /* Main.storyboard */; };
 		D4B3D35B20CCB1F000393068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B3D35A20CCB1F000393068 /* Assets.xcassets */; };
 		D4B3D35E20CCB1F000393068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B3D35C20CCB1F000393068 /* LaunchScreen.storyboard */; };
 		D4B3D36920CCB1F000393068 /* FabflixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D36820CCB1F000393068 /* FabflixTests.swift */; };
 		D4B3D37420CCB1F100393068 /* FabflixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D37320CCB1F100393068 /* FabflixUITests.swift */; };
+		D4B3D38220CCC05F00393068 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D38120CCC05F00393068 /* HomeViewController.swift */; };
+		D4B3D38B20CD0ACB00393068 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D38A20CD0ACB00393068 /* HomeService.swift */; };
+		D4B3D38E20CD0BCB00393068 /* WebCallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D38D20CD0BCB00393068 /* WebCallProtocol.swift */; };
+		D4B3D39020CD0CC100393068 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D38F20CD0CC100393068 /* SearchResult.swift */; };
+		D4B3D39420CD0D5C00393068 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D39320CD0D5C00393068 /* TypeAliases.swift */; };
+		D4B3D39620CD96E200393068 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D39520CD96E200393068 /* LoginService.swift */; };
+		D4B3D39920CDB76400393068 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D39820CDB76300393068 /* LoginResult.swift */; };
+		D4B3D39B20CDBE0D00393068 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3D39A20CDBE0D00393068 /* LoginRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D46A8AA420D0B54900827359 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		D4B3D35020CCB1EE00393068 /* Fabflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B3D35320CCB1EE00393068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4B3D35520CCB1EE00393068 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4B3D35520CCB1EE00393068 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D4B3D35820CCB1EE00393068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4B3D35A20CCB1F000393068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4B3D35D20CCB1F000393068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +57,14 @@
 		D4B3D36F20CCB1F100393068 /* FabflixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FabflixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B3D37320CCB1F100393068 /* FabflixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabflixUITests.swift; sourceTree = "<group>"; };
 		D4B3D37520CCB1F100393068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4B3D38120CCC05F00393068 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D4B3D38A20CD0ACB00393068 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		D4B3D38D20CD0BCB00393068 /* WebCallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCallProtocol.swift; sourceTree = "<group>"; };
+		D4B3D38F20CD0CC100393068 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		D4B3D39320CD0D5C00393068 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		D4B3D39520CD96E200393068 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		D4B3D39820CDB76300393068 /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		D4B3D39A20CDBE0D00393068 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +115,10 @@
 		D4B3D35220CCB1EE00393068 /* Fabflix */ = {
 			isa = PBXGroup;
 			children = (
+				D4B3D39220CD0D4400393068 /* Resources */,
+				D4B3D38320CD09B500393068 /* Login */,
+				D4B3D38620CD0A6E00393068 /* Home */,
 				D4B3D35320CCB1EE00393068 /* AppDelegate.swift */,
-				D4B3D35520CCB1EE00393068 /* ViewController.swift */,
 				D4B3D35720CCB1EE00393068 /* Main.storyboard */,
 				D4B3D35A20CCB1F000393068 /* Assets.xcassets */,
 				D4B3D35C20CCB1F000393068 /* LaunchScreen.storyboard */,
@@ -123,6 +143,101 @@
 				D4B3D37520CCB1F100393068 /* Info.plist */,
 			);
 			path = FabflixUITests;
+			sourceTree = "<group>";
+		};
+		D4B3D38320CD09B500393068 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D39720CDB74F00393068 /* Models */,
+				D4B3D38520CD0A2200393068 /* Repository */,
+				D4B3D38420CD0A1A00393068 /* Service */,
+				D4B3D35520CCB1EE00393068 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D4B3D38420CD0A1A00393068 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D39520CD96E200393068 /* LoginService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D4B3D38520CD0A2200393068 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D39A20CDBE0D00393068 /* LoginRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D4B3D38620CD0A6E00393068 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D38920CD0AAC00393068 /* Models */,
+				D4B3D38820CD0AA300393068 /* Repository */,
+				D4B3D38720CD0A9A00393068 /* Service */,
+				D4B3D38120CCC05F00393068 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D4B3D38720CD0A9A00393068 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D38A20CD0ACB00393068 /* HomeService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D4B3D38820CD0AA300393068 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D46A8AA420D0B54900827359 /* HomeRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D4B3D38920CD0AAC00393068 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D38F20CD0CC100393068 /* SearchResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4B3D38C20CD0BB000393068 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D38D20CD0BCB00393068 /* WebCallProtocol.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		D4B3D39120CD0D3B00393068 /* TypeAlias */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D39320CD0D5C00393068 /* TypeAliases.swift */,
+			);
+			path = TypeAlias;
+			sourceTree = "<group>";
+		};
+		D4B3D39220CD0D4400393068 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D38C20CD0BB000393068 /* Interface */,
+				D4B3D39120CD0D3B00393068 /* TypeAlias */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4B3D39720CDB74F00393068 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4B3D39820CDB76300393068 /* LoginResult.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +371,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4B3D35620CCB1EE00393068 /* ViewController.swift in Sources */,
+				D4B3D35620CCB1EE00393068 /* LoginViewController.swift in Sources */,
 				D4B3D35420CCB1EE00393068 /* AppDelegate.swift in Sources */,
+				D4B3D38B20CD0ACB00393068 /* HomeService.swift in Sources */,
+				D4B3D38220CCC05F00393068 /* HomeViewController.swift in Sources */,
+				D4B3D39020CD0CC100393068 /* SearchResult.swift in Sources */,
+				D4B3D39B20CDBE0D00393068 /* LoginRepository.swift in Sources */,
+				D4B3D39420CD0D5C00393068 /* TypeAliases.swift in Sources */,
+				D4B3D39920CDB76400393068 /* LoginResult.swift in Sources */,
+				D4B3D38E20CD0BCB00393068 /* WebCallProtocol.swift in Sources */,
+				D4B3D39620CD96E200393068 /* LoginService.swift in Sources */,
+				D46A8AA520D0B54900827359 /* HomeRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
