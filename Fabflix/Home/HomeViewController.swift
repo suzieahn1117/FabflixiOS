@@ -8,27 +8,71 @@
 
 import UIKit
 
-class HomeViewController: UIViewController,  UISearchBarDelegate {
-
+class HomeViewController: UIViewController,  UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource
+{
+   
+   
     @IBOutlet weak var SearchBar: UISearchBar!
     
-   
+    @IBAction func SignOut(_ sender: UIButton)
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+
     
-    @IBAction func SignOut(_ sender: UIBarButtonItem) {
-       dismiss(animated: true, completion: nil)
+     @IBOutlet weak var SearchResultTable: UITableView!
+    
+    @IBOutlet weak var HomePageActivity: UIActivityIndicatorView!
+    
+     var ovie_list: [SearchResult.Movie] = []
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        SearchResultTable.tableFooterView = UIView()
+        SearchBar.delegate=self
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ovie_list.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell()
+        let movie = ovie_list[indexPath.row]
+        cell.textLabel?.text = movie.title
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewWillAppear(true)
+        
+//        let singlemovie_id = SearchResultTable.indexPathForSelectedRow
+//        let current_cell = SearchResultTable.cellForRow(at: singlemovie_id!)
+//
+        let single_movie=self.storyboard?.instantiateViewController(withIdentifier: "SingleMovieView") as? SingleMovieViewController
+        single_movie?.movie_id = ovie_list[indexPath.row].id
+        self.navigationController?.pushViewController(single_movie!, animated: true)
+    
+    }
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        SearchBar.delegate=self
-        
-    }
-    
     func searchBarSearchButtonClicked(_ SearchBar: UISearchBar)
     {
-        print(SearchBar.text!)
+     
+        self.HomePageActivity.startAnimating()
+        
         
         var completionHandler : basicWebCall<SearchResult> =
         {
@@ -37,11 +81,18 @@ class HomeViewController: UIViewController,  UISearchBarDelegate {
             //This will happen in the background thread
             if (Success)
             {
-                print(theError!)
-                print(Content!)
+                
+                self.ovie_list = (Content?.movies)!
+          
+                DispatchQueue.main.async{
+                     self.HomePageActivity.stopAnimating()
+                    self.SearchResultTable.reloadData()
+                }
+                
             }
             else
             {
+                self.HomePageActivity.stopAnimating()
                 print("hello home error")
                 
             }
@@ -55,17 +106,7 @@ class HomeViewController: UIViewController,  UISearchBarDelegate {
     
     
     
-    
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
 
 }

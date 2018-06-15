@@ -54,6 +54,7 @@ class SearchResult : WebCallProtocol
     
     class Movie
     {
+        let id: String
         let title: String
         let year: Int
         let director: String
@@ -62,7 +63,13 @@ class SearchResult : WebCallProtocol
     
         required init(json: [String : Any]) throws
         {
-    
+            
+            guard let movie_id = json["id"] as? String
+                else{
+                    let customError : Error = NSError(domain:"", code: 0, userInfo: [NSLocalizedDescriptionKey:"Couldn't parse jsonDictionary - id"])
+                    throw customError
+            }
+            
     
             guard let movie_title = json["title"] as? String
             else{
@@ -82,6 +89,7 @@ class SearchResult : WebCallProtocol
                     throw customError
             }
     
+            id=movie_id
             title = movie_title
             year = movie_year
             director = movie_dir

@@ -14,15 +14,20 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var Username: UITextField!
     
     @IBOutlet weak var Password: UITextField!
+    @IBOutlet weak var SujiActivity: UIActivityIndicatorView!
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBAction func LetsGo(_ sender: UIButton) {
         
         let username = Username.text!
         let password = Password.text!
         
-//        let vc=self.storyboard?.instantiateViewController(withIdentifier: "HomePage") as? HomeViewController
-
-        //self.navigationController?.pushViewController( animated: true)
+        sender.isEnabled=false
+        SujiActivity.startAnimating()
        
         let completionHandler: basicWebCall<LoginResult> =
         {
@@ -33,7 +38,7 @@ class LoginViewController: UIViewController{
                 
                 if(Content!.responseCode == 1)
                 {
-                    DispatchQueue.main.async //this is asyncing to main thread
+                    DispatchQueue.main.async //this is a syncing to main thread
                         {
                             let vc=self.storyboard?.instantiateViewController(withIdentifier: "HomePage") as? HomeViewController
                             self.navigationController?.pushViewController(vc!, animated: true)
@@ -41,25 +46,35 @@ class LoginViewController: UIViewController{
                     
                 }
                 else{
+                    
+                    
                     DispatchQueue.main.async{
                         
-                    let alert = UIAlertController(title:"Alert", message:"Incorrect username or password", preferredStyle: UIAlertControllerStyle.alert)
+                    let alert = UIAlertController(title:"Alert", message:Content?.responseMessage, preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title:"Dismiss", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
-                        
+
                     }
                 }
                 
-                
-                
-            }else{
+            }
+            else
+            {
                 print("content: \(String(describing: Content))")
+            }
+            
+            DispatchQueue.main.async
+            {
+                    sender.isEnabled = true
+                    self.SujiActivity.stopAnimating()
             }
         }
     
         LoginService.Login(username: username, password: password,completionHandler: completionHandler)
 
         }
+    
+ 
     
 }
 

@@ -29,16 +29,10 @@ class HomeRepository: NSObject, URLSessionTaskDelegate
         let urlComponents=String(format: "https://fabflix-122b.appspot.com/API/Search?search_key=\(search_key)")
             
         guard let url = URL(string:urlComponents) else{ return }
-//            let parameter = ["search_key":search_key]
-        
+
             var request = URLRequest(url:url)
             request.httpMethod = "GET"
-//            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameter, options: []) else{
-//                return
-//            }
-            //request.httpBody = httpBody
-            
-            //request.addValue("application/json", forHTTPHeaderField:"Content-Type")
+
             let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
             
             session.dataTask(with: request){ (data, response, error) in
